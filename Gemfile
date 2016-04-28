@@ -18,6 +18,7 @@ gem 'devise'
 gem 'high_voltage'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
+gem 'activeadmin', github: 'activeadmin'
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil
