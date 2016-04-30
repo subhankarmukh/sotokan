@@ -1,25 +1,51 @@
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <%= link_to 'Start Bootstrap', root_path, class: 'navbar-brand' %>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <%= render 'layouts/navigation_links' %>
-        <%= render 'layouts/nav_links_for_auth' %>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+<div id="main-nav" class="navbar navbar-default">
+  <div class="container">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to t('site.name'), root_path, class: 'navbar-brand' %>
     </div>
-    <!-- /.container -->
-</nav>
+
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <%#= get_menu_items @primary_menu_items %>
+        <% if user_signed_in? %>
+            <%#= link_to 'Home', root_path %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <i class="fa fa-cog"></i> <span class="caret"></span>
+              </a>
+    
+              <ul class="dropdown-menu" role="menu">
+                <li><%= link_to 'EDIT PROFILE', main_app.edit_user_registration_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'SIGN OUT', main_app.destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li> <!-- /.dropdown -->
+            <%# if current_user.has_role? :admin %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                  Admin <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><%= link_to 'Link 1', '#' %></li>
+                  <li><%= link_to 'Link 2', '#' %></li>
+                  <li><%= link_to 'Link 3', '#' %></li>
+                </ul>
+              </li> <!-- /.dropdown -->
+            <%# end %>
+        <% else %>
+          <%#= link_to 'HOME', blog_posts_path %>
+          <li><%= link_to 'Sign In', main_app.new_user_session_path %></li>
+          <li><%= link_to 'Sign Up', main_app.new_user_registration_path  %></li>
+        <% end #user_signed_in? %>
+      </ul> <!-- /.nav navbar-nav navbar-right -->
+      <%#= render 'search/form' %>
+      
+    </div> <!-- /.navbar-collapse collapse navbar-responsive-collapse -->
+  </div> <!-- /.container -->
+</div> <!-- /#main-nav -->
