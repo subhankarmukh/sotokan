@@ -2,7 +2,11 @@
 
 <h1>Listing Blog Articles</h1>
 
-<table>
+<p class="text-right">
+  <%= link_to 'New Blog article', new_blog_article_path %>
+</p>
+
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Title</th>
@@ -26,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Blog article', new_blog_article_path %>
+
