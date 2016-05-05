@@ -1,5 +1,8 @@
 class BlogArticlesController < InheritedResources::Base
   
+  before_action :set_blog_article, only: [:show, :edit, :update, :destroy]
+
+  authorize_resource
 
   def create
     @blog_article = BlogArticle.new(blog_article_params)
@@ -16,11 +19,15 @@ class BlogArticlesController < InheritedResources::Base
     end
   end
 
+  def show
+    @blog_post = BlogPost.find(params[:id])
+  end
+
   private
 
-  	# def set_blog_article
-  	#   @blog_article = BlogArticle.find(params[:id])
-  	# end
+  	def set_blog_article
+  	  @blog_article = BlogArticle.find(params[:id])
+  	end
 
     def blog_article_params
       params.require(:blog_article).permit(:title, :description)

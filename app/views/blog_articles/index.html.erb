@@ -2,9 +2,13 @@
 
 <h1>Listing Blog Articles</h1>
 
-<p class="text-right">
-  <%= link_to 'New Blog article', new_blog_article_path %>
-</p>
+<% if can? :create, BlogArticle.new %>
+  <div id="btn_container_new_blog_post">
+    <p class="text-right">
+      <%= link_to 'New Blog article', new_blog_article_path, class: 'btn btn-primary' %>
+    </p>
+  </div>
+<% end %>
 
 <table class="table table-striped">
   <thead>

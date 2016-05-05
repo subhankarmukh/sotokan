@@ -19,6 +19,9 @@ gem 'high_voltage'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'activeadmin', github: 'activeadmin'
+gem "rolify"
+gem "cancan"
+
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil
