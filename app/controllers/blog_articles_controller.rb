@@ -1,5 +1,5 @@
 class BlogArticlesController < InheritedResources::Base
-  
+
   before_action :set_blog_article, only: [:show, :edit, :update, :destroy]
 
   authorize_resource
@@ -17,10 +17,6 @@ class BlogArticlesController < InheritedResources::Base
         format.json { render json: @blog_article.errors, status: :unprocessable_entity }
       end
     end
-  end
-
-  def show
-    @blog_post = BlogPost.find(params[:id])
   end
 
   private

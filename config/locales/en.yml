@@ -20,4 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  site:
+    name: 'Sotokan'
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, voluptatem optio, inventore reiciendis temporibus error eum, facere molestias ullam itaque suscipit perspiciatis praesentium. Aliquam modi, ullam sed tenetur, blanditiis quae?'
