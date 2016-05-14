@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :blog_articles
+  get 'comments/index'
+
+  get 'comments/new'
+
+  resources :blog_articles do
+  	resources :comments
+  end
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root to: 'blog_articles#index'

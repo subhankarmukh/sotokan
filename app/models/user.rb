@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :blog_articles
+  has_many :comments, as: :commentable
 
 
   # Callbacks

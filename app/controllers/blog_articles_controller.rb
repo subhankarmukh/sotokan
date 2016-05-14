@@ -4,6 +4,12 @@ class BlogArticlesController < InheritedResources::Base
 
   authorize_resource
 
+  def show
+    @commentable = @blog_article
+    @comments = @commentable.comments
+    @comment = Comment.new
+  end
+
   def create
     @blog_article = BlogArticle.new(blog_article_params)
     @blog_article.user = current_user
