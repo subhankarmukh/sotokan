@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'comments/index'
+  # get 'comments/index'
 
-  get 'comments/new'
+  # get 'comments/new'
 
   resources :blog_articles do
   	resources :comments
