@@ -2,7 +2,7 @@
 <% @comments.each do |comment| %>
   <div class="comment">
   	<h3><%= simple_format comment.content %></h3>
-  	<p>Posted <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.user_id %> </p>
+  	<p>Posted <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.user.name unless comment.user.nil? %> </p>
   </div>
 <% end %>	
 </div>
