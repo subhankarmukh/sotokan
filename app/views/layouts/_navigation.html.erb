@@ -12,36 +12,31 @@
 
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <%#= get_menu_items @primary_menu_items %>
         <% if user_signed_in? %>
-            <%#= link_to 'Home', root_path %>
+            
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><b>Options</b>
                 <i class="fa fa-cog"></i> <span class="caret"></span>
               </a>
     
               <ul class="dropdown-menu" role="menu">
+                <li><%= link_to 'HOME', root_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'ABOUT US', 'pages/about' %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'CONTACT US', 'pages/contact' %></li>
+                <li class="divider"></li>
                 <li><%= link_to 'EDIT PROFILE', main_app.edit_user_registration_path %></li>
                 <li class="divider"></li>
                 <li><%= link_to 'SIGN OUT', main_app.destroy_user_session_path, method: :delete %></li>
               </ul>
-            </li> <!-- /.dropdown -->
-            <%# if current_user.has_role? :admin %>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                  Admin <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><%= link_to 'Link 1', '#' %></li>
-                  <li><%= link_to 'Link 2', '#' %></li>
-                  <li><%= link_to 'Link 3', '#' %></li>
-                </ul>
-              </li> <!-- /.dropdown -->
-            <%# end %>
+            </li> 
         <% else %>
-          <%#= link_to 'HOME', blog_posts_path %>
-          <li><%= link_to 'Sign In', main_app.new_user_session_path %></li>
-          <li><%= link_to 'Sign Up', main_app.new_user_registration_path  %></li>
+          <li><%= link_to 'HOME', root_path %></li>
+          <li><%= link_to 'ABOUT US', 'pages/about' %></li>
+          <li><%= link_to 'CONTACT US', 'pages/contact' %></li>
+          <li><%= link_to 'SIGN IN', main_app.new_user_session_path %></li>
+          <li><%= link_to 'SIGN UP', main_app.new_user_registration_path  %></li>
         <% end #user_signed_in? %>
       </ul> <!-- /.nav navbar-nav navbar-right -->
       <%#= render 'search/form' %>
