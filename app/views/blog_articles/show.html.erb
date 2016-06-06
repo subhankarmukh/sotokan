@@ -2,12 +2,11 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @blog_article.title %>
-</p>
+  <h1><%= @blog_article.title %></h1></p>
 
 <% unless @blog_article.image.blank? %>
   <p>
-    <%= link_to image_tag(@blog_article.image_url(:medium).to_s, class: 'img-responsive center-block img-cover'), @blog_article %>
+    <%= link_to image_tag(@blog_article.image_url(:thumbnail).to_s, class: 'img-responsive center-block img-cover'), @blog_article %>
   </p>
 <% end %>
 

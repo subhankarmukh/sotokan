@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Blog Articles</h1>
+<h1>Listing Martial Art Articles</h1>
 
 <% if can? :create, BlogArticle.new %>
   <div id="btn_container_new_blog_post">
@@ -24,7 +24,7 @@
     <% @blog_articles.each do |blog_article| %>
       <tr>
         <td><%= blog_article.title %></td>
-        <td><%= blog_article.description %></td>
+        <td><%= get_blog_article_excerpt blog_article %></td>
         <td><center><%= blog_article.user.name %></center></td>
         
         <td class="text-center"><%= link_to 'Show', blog_article %></td>
