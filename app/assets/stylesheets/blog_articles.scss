@@ -1,3 +1,8 @@
 // Place all the styles related to the BlogArticles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.img-cover:hover
+{
+	transition: all 0.25s ease-in-out 0s;
+	filter: grayscale(60%);
+}

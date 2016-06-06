@@ -5,6 +5,12 @@
   <%= @blog_article.title %>
 </p>
 
+<% unless @blog_article.image.blank? %>
+  <p>
+    <%= link_to image_tag(@blog_article.image_url(:medium).to_s, class: 'img-responsive center-block img-cover'), @blog_article %>
+  </p>
+<% end %>
+
 <p>
   <strong>Description:</strong>
   <%= @blog_article.description %>

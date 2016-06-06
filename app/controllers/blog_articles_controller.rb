@@ -36,7 +36,7 @@ class BlogArticlesController < InheritedResources::Base
         :title,
         :description,
         :image,
-        :remote_image_url,)
+        :remote_image_url)
     end
 end
 
