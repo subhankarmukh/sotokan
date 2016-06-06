@@ -20,6 +20,8 @@ gem 'therubyracer', :platform=>:ruby
 gem 'activeadmin', github: 'activeadmin'
 gem "rolify"
 gem "cancan"
+gem 'carrierwave'
+gem "mini_magick"
 
 group :development do
   gem 'better_errors'

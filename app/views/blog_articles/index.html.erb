@@ -25,7 +25,8 @@
       <tr>
         <td><%= blog_article.title %></td>
         <td><%= blog_article.description %></td>
-        <td class="text-center"><%= link_to blog_article.user.email, "mailto:#{blog_article.user.email}" %></td>
+        <td><center><%= blog_article.user.name %></center></td>
+        
         <td class="text-center"><%= link_to 'Show', blog_article %></td>
         <td class="text-center"><%= link_to 'Edit', edit_blog_article_path(blog_article) if (can? :upate, blog_article) %></td>
         <td class="text-center"><%= link_to 'Destroy', blog_article, method: :delete, data: { confirm: 'Are you sure?' } if (can? :destroy, blog_article) %></td>

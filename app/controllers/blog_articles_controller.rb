@@ -32,7 +32,11 @@ class BlogArticlesController < InheritedResources::Base
   	end
 
     def blog_article_params
-      params.require(:blog_article).permit(:title, :description)
+      params.require(:blog_article).permit(
+        :title,
+        :description,
+        :image,
+        :remote_image_url,)
     end
 end
 
